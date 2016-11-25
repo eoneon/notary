@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row">
+  <div class="col-md-8">
+    <div class="media">
+      <br>
+      <div class="media-body">
+        <h2 class="media-heading"><%= @user.full_name %></h2>
+        <p>Email: <%= @user.email %></p>
+        <p>Commission Number: <%= @user.commission_number %></p>
+        <p>Commission Expiration: <%= @user.commission_expiration %></p>
+      </div>
+    </div>
+  </div>
+</div>

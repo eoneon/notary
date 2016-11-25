@@ -17,7 +17,17 @@
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name, autofocus: true %>
   </div>
-  
+  <br>
+  <div class="field">
+    <%= f.label :commission_number %><br />
+    <%= f.text_field :commission_number, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :commission_expiration %><br />
+    <%= f.date_field :commission_expiration, autofocus: true %>
+  </div>
+  <br>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -26,7 +36,7 @@
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
-
+  <br>
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>

@@ -15,5 +15,7 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:account_update, keys: [:first_name])
         devise_parameter_sanitizer.permit(:account_update, keys: [:middle_name])
         devise_parameter_sanitizer.permit(:account_update, keys: [:last_name])
+        devise_parameter_sanitizer.permit(:account_update, keys: [:commission_number])
+        devise_parameter_sanitizer.permit(:account_update, keys: [:commission_expiration])
     end
 end
