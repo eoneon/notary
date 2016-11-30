@@ -11,6 +11,8 @@ RSpec.describe User, type: :model do
   it { is_expected.to validate_uniqueness_of(:email) }
   it { is_expected.to validate_length_of(:email).is_at_least(3) }
 
+  it { is_expected.to have_many(:locations)}
+
   describe "attributes" do
     it "should have first_name, last_name and email attributes" do
       expect(user).to have_attributes(first_name: user.first_name, last_name: user.last_name, email: user.email)
