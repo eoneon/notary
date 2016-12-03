@@ -1,10 +1,10 @@
 class Users::LocationsController < LocationsController
-    before_action :set_commentable
+  before_action :set_locatable
 
-    private
+  private
 
-    def set_locatable
-      @locatable = User.find(params[:user_id])
-      @view = @locatable
-    end
+  def set_locatable
+    @locatable = User.find(params[:user_id])
+    @view = @locatable
+  end
 end

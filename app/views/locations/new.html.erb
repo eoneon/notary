@@ -1,0 +1,6 @@
+<h1>Add Address for <%= @locatable.full_name %></h1>
+<div class="row">
+  <div class="col-lg-8">
+    <%= render partial: 'form', locals: { locatable: @locatable, location: @location } %>
+  </div>
+</div>
