@@ -4,7 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :locations, as: :locatable 
+  has_many :locations, as: :locatable
+  has_many :phones, as: :phoneable
+  
   before_save { self.role ||= :member }
   before_save { self.email = email.downcase if email.present? }
   validates :first_name, length: {minimum: 1, maximum: 100}, presence: true
