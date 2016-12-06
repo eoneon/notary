@@ -6,13 +6,14 @@ class LocationsController < ApplicationController
 
   def create
     @location = @locatable.locations.build(location_params)
+    @new_location = Location.new
 
     if @location.save
       flash[:notice] = "Address was successfully saved."
       redirect_to @view
     else
       flash[:notice] = "There was an error saving address."
-      render @view
+      render :new
     end
   end
 
@@ -34,13 +35,15 @@ class LocationsController < ApplicationController
   end
 
   def destroy
-    location = @locatable.locations.find(params[:id])
-    if location.destroy
+    @location = @locatable.locations.find(params[:id])
+    if @location.destroy
       flash[:notice] = "Location was deleted successfully."
-      redirect_to @view
     else
       flash[:alert] = "Location couldn't be deleted. Try again."
-      redirect_to @view
+    end
+
+    respond_to do |format|
+      format.js
     end
   end
 

@@ -37,9 +37,12 @@ class PhonesController < ApplicationController
     @phone = @phoneable.phones.find(params[:id])
     if @phone.destroy
       flash[:notice] = "Phone number was deleted successfully."
-      respond_to do |format|
-        format.js
-      end
+    else
+      flash[:alert] = "Phone couldn't be deleted. Try again."
+    end
+
+    respond_to do |format|
+      format.js
     end
   end
   private

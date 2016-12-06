@@ -12,12 +12,13 @@
       </div>
     </div>
 
-    <h4 class="media-heading">Add Address  <%= link_to "New Address", new_user_location_path(@user), class: 'btn btn-success' %></h4>
-      <%= render partial: 'locations/location', locals: {locatable: @user, location: @user.locations} %>
+    <h4 class="media-heading new-location">Add Address  <%= link_to "New Address", new_user_location_path(@user), class: 'btn btn-success' %></h4>
 
-    <div class="new-phone">  
-      <h4 class="media-heading">Add Phone Numbers  <%= link_to "New Phone Numbers", new_user_phone_path(@user), class: 'btn btn-success' %></h4>
-    </div>
+      <div class="js-locations">
+        <%= render partial: 'locations/location', locals: {locatable: @user, location: @user.locations} %>
+      </div>
+
+    <h4 class="media-heading new-phone">Add Phone Numbers  <%= link_to "New Phone Numbers", new_user_phone_path(@user), class: 'btn btn-success' %></h4>
 
     <div class="js-phones">
       <%= render partial: 'phones/phone', locals: {phoneable: @user, phone: @user.phones} %>
