@@ -1,4 +1,4 @@
-<%= form_for [phoneable, phone] do |f| %>
+<%= form_for [phoneable, phone], remote: true do |f| %>
   <div class="form-group">
     <%= f.label :phone_number %>
     <%= f.telephone_field :phone_number, class: 'form-control', placeholder: "Enter phone number" %>

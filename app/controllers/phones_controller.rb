@@ -5,13 +5,14 @@ class PhonesController < ApplicationController
 
   def create
     @phone = @phoneable.phones.build(phone_params)
+    @new_phone = Phone.new
 
     if @phone.save
       flash[:notice] = "Phone number number was successfully saved."
       redirect_to @view
     else
-      flash[:notice] = "There was an error saving phone number."
-      render @view
+      flash[:alert] = "Phone failed to save."
+      render :new
     end
   end
 
@@ -33,13 +34,12 @@ class PhonesController < ApplicationController
   end
 
   def destroy
-    phone = @phoneable.phones.find(params[:id])
-    if phone.destroy
+    @phone = @phoneable.phones.find(params[:id])
+    if @phone.destroy
       flash[:notice] = "Phone number was deleted successfully."
-      redirect_to @view
-    else
-      flash[:alert] = "Phone number couldn't be deleted. Try again."
-      redirect_to @view
+      respond_to do |format|
+        format.js
+      end
     end
   end
   private
