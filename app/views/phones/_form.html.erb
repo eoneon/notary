@@ -6,7 +6,7 @@
 
   <div class="form-group">
     <%= f.label(:phone_type, "Cell") %>
-    <%= f.radio_button(:phone_type, "cell") %>
+    <%= f.radio_button(:phone_type, "cell", checked: true) %>
     <%= f.label(:phone_type, "Home") %>
     <%= f.radio_button(:phone_type, "home") %>
     <%= f.label(:phone_type, "Work") %>

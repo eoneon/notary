@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161206210543) do
+ActiveRecord::Schema.define(version: 20161207181501) do
 
   create_table "emails", force: :cascade do |t|
     t.string   "email"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 20161206210543) do
   end
 
   add_index "emails", ["emailable_type", "emailable_id"], name: "index_emails_on_emailable_type_and_emailable_id"
+
+  create_table "jobs", force: :cascade do |t|
+    t.date     "job_date"
+    t.boolean  "job_status", default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "locations", force: :cascade do |t|
     t.text     "address"
