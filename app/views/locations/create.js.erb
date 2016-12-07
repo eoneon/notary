@@ -3,5 +3,5 @@
   $('.new-location').html("<%= escape_javascript(render partial: 'locations/form', locals: { locatable: @locatable, location: @new_location }) %>")
   <% else %>
   $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] %></div>");
-  $('.new-location').html("<%= escape_javascript(render partial: 'phones/form', locals: { locatable: @locatable, location: @location }) %>");
+  $('.new-location').html("<%= escape_javascript(render partial: 'locations/form', locals: { locatable: @locatable, location: @location }) %>");
 <% end %>

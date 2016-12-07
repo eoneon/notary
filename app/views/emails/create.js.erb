@@ -1,0 +1,7 @@
+<% if @email valid? %>
+  $('.js-emails').prepend("<%= escape_javascript(render(@email)) %>");
+  $('.new-email').html("<%= escape_javascript(render partial: 'emails/form', locals: { emailable: @emailable, email: @new_email }) %>")
+  <% else %>
+  $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] %></div>");
+  $('.new-email').html("<%= escape_javascript(render partial: 'emails/form', locals: { emailable: @emailable, email: @email }) %>");
+<% end %>

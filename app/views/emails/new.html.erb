@@ -1,0 +1,6 @@
+<h1>Add Email for <%= @emailable.full_name %></h1>
+<div class="row">
+  <div class="col-lg-8">
+    <%= render partial: 'form', locals: { emailable: @emailable, email: @email } %>
+  </div>
+</div>

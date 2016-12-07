@@ -1,0 +1,7 @@
+<%= form_for [emailable, email], remote: true do |f| %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control', placeholder: "Enter email" %>
+  </div>
+  <%= f.submit "Submit Address", class: "btn btn-default pull-right" %>
+<% end %>

@@ -12,16 +12,22 @@
       </div>
     </div>
 
-    <h4 class="media-heading new-location">Add Address  <%= link_to "New Address", new_user_location_path(@user), class: 'btn btn-success' %></h4>
+    <h4 class="media-heading new-location">Add Notary Public's Address  <%= link_to "New Address", new_user_location_path(@user), class: 'btn btn-success' %></h4>
 
       <div class="js-locations">
         <%= render partial: 'locations/location', locals: {locatable: @user, location: @user.locations} %>
       </div>
 
-    <h4 class="media-heading new-phone">Add Phone Numbers  <%= link_to "New Phone Numbers", new_user_phone_path(@user), class: 'btn btn-success' %></h4>
+    <h4 class="media-heading new-phone">Add Notary Public's Phone Numbers  <%= link_to "New Phone Numbers", new_user_phone_path(@user), class: 'btn btn-success' %></h4>
 
     <div class="js-phones">
       <%= render partial: 'phones/phone', locals: {phoneable: @user, phone: @user.phones} %>
+    </div>
+
+    <h4 class="media-heading new-email">Add Notary Public's Email <%= link_to "New Email", new_user_email_path(@user), class: 'btn btn-success' %></h4>
+
+    <div class="js-emails">
+      <%= render partial: 'emails/email', locals: {emailable: @user, email: @user.emails} %>
     </div>
   </div>
 </div>
