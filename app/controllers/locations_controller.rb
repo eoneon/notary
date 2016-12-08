@@ -10,7 +10,7 @@ class LocationsController < ApplicationController
 
     if @location.save
       flash[:notice] = "Address was successfully saved."
-      redirect_to @view
+      redirect_to @locatable
     else
       flash[:notice] = "There was an error saving address."
       render :new
@@ -27,7 +27,7 @@ class LocationsController < ApplicationController
 
     if @location.save
       flash[:notice] = "Address was successfully saved."
-      redirect_to @view
+      redirect_to @locatable
     else
       flash[:notice] = "There was an error saving address."
       render :edit

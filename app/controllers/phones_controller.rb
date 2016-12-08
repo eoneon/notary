@@ -26,7 +26,7 @@ class PhonesController < ApplicationController
 
     if @phone.save
       flash[:notice] = "Phone number was successfully saved."
-      redirect_to @view
+      redirect_to @phoneable
     else
       flash[:notice] = "There was an error saving phone number."
       render :edit
@@ -40,11 +40,8 @@ class PhonesController < ApplicationController
     else
       flash[:alert] = "Phone couldn't be deleted. Try again."
     end
-
-    respond_to do |format|
-      format.js
-    end
   end
+  
   private
 
   def phone_params

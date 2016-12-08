@@ -16,16 +16,29 @@ class EmailsController < ApplicationController
     end
   end
 
+  def edit
+    @email = Email.find(params[:id])
+  end
+
+  def update
+    @email = Email.find(params[:id])
+    @email.assign_attributes(email_params)
+
+    if @email.save
+      flash[:notice] = "Email was successfully saved."
+      redirect_to @emailable
+    else
+      flash[:notice] = "There was an error saving email."
+      render :edit
+    end
+  end
+
   def destroy
     @email = @emailable.emails.find(params[:id])
     if @email.destroy
       flash[:notice] = "Email was deleted successfully."
     else
       flash[:alert] = "Email couldn't be deleted. Try again."
-    end
-
-    respond_to do |format|
-      format.js
     end
   end
 
