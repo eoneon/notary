@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20161207181501) do
 
   create_table "locations", force: :cascade do |t|
     t.text     "address"
-    t.integer  "user_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.integer  "locatable_id"
@@ -40,7 +39,6 @@ ActiveRecord::Schema.define(version: 20161207181501) do
   end
 
   add_index "locations", ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id"
-  add_index "locations", ["user_id"], name: "index_locations_on_user_id"
 
   create_table "phones", force: :cascade do |t|
     t.string   "phone_number"

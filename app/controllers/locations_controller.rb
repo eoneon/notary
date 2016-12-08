@@ -41,10 +41,6 @@ class LocationsController < ApplicationController
     else
       flash[:alert] = "Location couldn't be deleted. Try again."
     end
-
-    respond_to do |format|
-      format.js
-    end
   end
 
   private
