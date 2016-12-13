@@ -47,22 +47,23 @@ RSpec.describe UsersController, type: :controller do
       new_email = "fred@io.com"
       new_first_name = "Fred"
       new_last_name = "Sanford"
-      # new_commission_number = "12345678"
 
-      put :update, id: user.id, post: {new_email: new_email, first_name: new_first_name, last_name: new_last_name}
+      put :update, id: user.id, user: { email: new_email, first_name: new_first_name, last_name: new_last_name }
 
       updated_user = assigns(:user)
       expect(updated_user.id).to eq user.id
+      expect(updated_user.email).to eq new_email
       expect(updated_user.first_name).to eq new_first_name
       expect(updated_user.last_name).to eq new_last_name
     end
 
     it "redirects to the updated user" do
+      new_email = "fred@io.com"
       new_first_name = "Fred"
       new_last_name = "Sanford"
 
-      put :update, id: user.id, post: {first_name: new_first_name, last_name: new_last_name}
-      expect(response).to redirect_to :show
+      put :update, id: user.id, user: { email: new_email, first_name: new_first_name, last_name: new_last_name }
+      expect(response).to redirect_to(user_path)
     end
   end
 

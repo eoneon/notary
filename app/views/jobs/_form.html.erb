@@ -1,0 +1,10 @@
+<%= form_for [user, job] do |f| %>
+  <div class="form-group">
+    <%= f.label :job_date %>
+    <%= f.date_field :job_date, class: 'form-control', placeholder: "Enter date" %>
+
+    <%= f.label :job_status %>
+    <%= f.check_box :job_status, class: 'checkbox' %>
+  </div>
+  <%= f.submit "Submit Job", class: "btn btn-default pull-right" %>
+<% end %>

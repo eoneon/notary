@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :locations, module: :users
     resources :phones, module: :users
     resources :emails, module: :users
+    resources :jobs, except: [:index]
   end
 end
