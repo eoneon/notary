@@ -1,0 +1,12 @@
+<% personable.people.each do |person| %>
+  <%= content_tag :div, class: "media js-people", id: "person-#{person.id}" do %>
+    <div class="media">
+      <div class="well">
+        <p><%= person.full_name %>
+        <p><%= link_to "Edit signer's name", edit_job_person_path(person.personable, person) %> |
+           <%= link_to "Delete signer", [person.personable, person], method: :delete, remote: true, data: { confirm: 'Are you sure you want to delete this signer?' } %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

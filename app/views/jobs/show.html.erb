@@ -11,10 +11,13 @@
                <%= link_to "Delete job", [@job.user, @job], method: :delete, remote: true, data: { confirm: 'Are you sure you want to delete this job?' } %>
             </p>
           </div>
-          <h4 class="media-heading new-location">Add Job's Address  <%= link_to "Job Address", new_job_location_path(@job), class: 'btn btn-success' %></h4>
-          <h4 class="media-heading">Job location</h4>
+          <h4 class="media-heading">Job location   <%= link_to "Add Address", new_job_location_path(@job), class: 'btn btn-success' %></h4>
           <div class="media-body">
-            <%= render partial: 'locations/location', locals: {locatable: @job, location: @job.locations} %>
+            <%= render partial: 'locations/location', locals: {locatable: @job, locations: @job.locations} %>
+          </div>
+          <h4 class="media-heading">Signers  <%= link_to "Add Signer", new_job_person_path(@job), class: 'btn btn-success' %></h4>
+          <div class="media-body">
+            <%= render partial: 'people/person', locals: {personable: @job, person: @job.locations} %>
           </div>
       </div>
     </div>

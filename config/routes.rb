@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
   resources :jobs, except: [] do
     resources :locations, module: :jobs
+    resources :people, module: :jobs
   end
 end
