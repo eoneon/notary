@@ -8,4 +8,8 @@ Rails.application.routes.draw do
     resources :emails, module: :users
     resources :jobs, except: [:index]
   end
+
+  resources :jobs, except: [] do
+    resources :locations, module: :jobs
+  end
 end

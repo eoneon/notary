@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161211230743) do
+ActiveRecord::Schema.define(version: 20161214033032) do
 
   create_table "emails", force: :cascade do |t|
     t.string   "email"
@@ -42,6 +42,19 @@ ActiveRecord::Schema.define(version: 20161211230743) do
   end
 
   add_index "locations", ["locatable_type", "locatable_id"], name: "index_locations_on_locatable_type_and_locatable_id"
+
+  create_table "people", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.string   "gender"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "personable_id"
+    t.string   "personable_type"
+  end
+
+  add_index "people", ["personable_type", "personable_id"], name: "index_people_on_personable_type_and_personable_id"
 
   create_table "phones", force: :cascade do |t|
     t.string   "phone_number"
