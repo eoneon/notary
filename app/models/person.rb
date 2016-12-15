@@ -3,7 +3,7 @@ class Person < ActiveRecord::Base
 
   validates :first_name, length: {minimum: 1, maximum: 100}, presence: true
   validates :last_name, length: {minimum: 1, maximum: 100}, presence: true
-  
+
   def full_name
     "#{first_name} #{middle_name} #{last_name}"
   end

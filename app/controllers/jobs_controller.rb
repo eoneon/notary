@@ -40,7 +40,7 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @job = @user.jobs.find(params[:id])
 
     if @job.destroy
