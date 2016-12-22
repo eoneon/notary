@@ -3,7 +3,8 @@
     <div class="media">
       <div class="well">
         <p><%= location.address %></p>
-        <p><%= link_to "Edit address", edit_user_location_path(location.locatable, location) %> |
+        <%= render partial: 'locations/form', locals: { locatable: locatable, location: location } %>
+        <p class="js-btn"><%= link_to "Edit address!" %> |
            <%= link_to "Delete address", [location.locatable, location], method: :delete, remote: true, data: { confirm: 'Are you sure you want to delete this address?' } %>
         </p>
       </div>

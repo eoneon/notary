@@ -15,3 +15,9 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+$(document).ready(function(){
+  $('.js-btn').click(function(event){
+     $(this).parent().find('.js-form:first').toggle();
+   });
+});

@@ -1,7 +1,9 @@
-<%= form_for [locatable, location], remote: true do |f| %>
-  <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address, class: 'form-control', placeholder: "Enter address" %>
-  </div>
-  <%= f.submit "Submit Address", class: "btn btn-default pull-right" %>
+<%= content_tag :div, class: "js-form" do %>
+  <%= form_for [locatable, location] do |f| %>
+    <div class="form-group">
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control', placeholder: "Enter address" %>
+    </div>
+    <%= f.submit "Submit Address", class: "btn btn-default pull-right" %>
+  <% end %>
 <% end %>
