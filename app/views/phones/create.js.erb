@@ -1,7 +1,0 @@
-<% if @phone.valid? %>
-   $('.js-phones').prepend("<%= escape_javascript(render(@phone)) %>");
-   $('.new-phone').html("<%= escape_javascript(render partial: 'phones/form', locals: { phoneable: @phoneable, phone: @new_phone }) %>");
- <% else %>
-   $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= flash.now[:alert] %></div>");
-   $('.new-phone').html("<%= escape_javascript(render partial: 'phones/form', locals: { phoneable: @phoneable, phone: @phone }) %>");
- <% end %>

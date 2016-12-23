@@ -1,23 +1,15 @@
 class PhonesController < ApplicationController
-  def new
-    @phone = Phone.new
-  end
 
   def create
     @phone = @phoneable.phones.build(phone_params)
-    @new_phone = Phone.new
 
     if @phone.save
       flash[:notice] = "Phone number number was successfully saved."
-      redirect_to @view
+      redirect_to @phoneable
     else
       flash[:alert] = "Phone failed to save."
       render :new
     end
-  end
-
-  def edit
-    @phone = Phone.find(params[:id])
   end
 
   def update
@@ -41,7 +33,7 @@ class PhonesController < ApplicationController
       flash[:alert] = "Phone couldn't be deleted. Try again."
     end
   end
-  
+
   private
 
   def phone_params

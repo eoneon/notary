@@ -1,11 +1,7 @@
 class EmailsController < ApplicationController
-  def new
-    @email = Email.new
-  end
 
   def create
     @email = @emailable.emails.build(email_params)
-    @new_email = Email.new
 
     if @email.save
       flash[:notice] = "Email was successfully saved."
@@ -14,10 +10,6 @@ class EmailsController < ApplicationController
       flash[:notice] = "There was an error saving email."
       render :new
     end
-  end
-
-  def edit
-    @email = Email.find(params[:id])
   end
 
   def update

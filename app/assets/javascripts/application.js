@@ -18,6 +18,7 @@
 
 $(document).ready(function(){
   $('.js-btn').click(function(event){
-     $(this).parent().find('.js-form:first').toggle();
-   });
+    $(this).parent().find('.js-form:first').toggle();
+    event.preventDefault();
+  });
 });

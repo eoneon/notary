@@ -14,6 +14,7 @@
 
 
     <h4 class="media-heading">My Address</h4>
+
     <div>
       <button type="button", class="btn btn-default js-btn">Add address</button>
       <div>
@@ -26,24 +27,41 @@
       <div class="js-locations">
         <%= render partial: 'locations/location', locals: {locatable: @user, location: @user.locations} %>
       </div>
-
     </div>
 
     <br>
     <br>
 
+    <h4 class="media-heading">My Phone Numbers</h4>
+    <div>
+      <button type="button", class="btn btn-default js-btn">Add phone number</button>
+      <div>
+        <%= render partial: 'phones/form', locals: { phoneable: @user, phone: Phone.new } %>
+      </div>
 
+      <br>
+      <br>
 
-    <h4 class="media-heading new-phone">My Phone Numbers  <%= link_to "New Phone Numbers", new_user_phone_path(@user), class: 'btn btn-success' %></h4>
-
-    <div class="js-phones">
-      <%= render partial: 'phones/phone', locals: {phoneable: @user, phone: @user.phones} %>
+      <div class="js-phones">
+        <%= render partial: 'phones/phone', locals: {phoneable: @user, phone: @user.phones} %>
+      </div>
     </div>
 
-    <h4 class="media-heading new-email">Add Notary Public's Email <%= link_to "New Email", new_user_email_path(@user), class: 'btn btn-success' %></h4>
+    <h4 class="media-heading">My Emails</h4>
 
-    <div class="js-emails">
-      <%= render partial: 'emails/email', locals: {emailable: @user, email: @user.emails} %>
+
+    <div>
+      <button type="button", class="btn btn-default js-btn">Add email</button>
+      <div>
+        <%= render partial: 'emails/form', locals: { emailable: @user, email: Email.new } %>
+      </div>
+
+      <br>
+      <br>
+
+      <div class="js-emails">
+        <%= render partial: 'emails/email', locals: {emailable: @user, email: @user.emails} %>
+      </div>
     </div>
   </div>
 </div>

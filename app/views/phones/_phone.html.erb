@@ -2,7 +2,8 @@
   <%= content_tag :div, class: "media js-phones", id: "phone-#{phone.id}" do %>
       <div class="well">
         <p> <%= phone.phone_type %> : <%= phone.phone_number %></p>
-        <p><%= link_to "Edit phone number", edit_user_phone_path(phone.phoneable, phone) %> |
+        <%= render partial: 'phones/form', locals: { phoneable: phoneable, phone: phone } %>
+        <p class="js-btn"><%= link_to "Edit phone number!" %> |
            <%= link_to "Delete phone number", [phone.phoneable, phone], method: :delete, remote: true, data: { confirm: 'Are you sure you want to delete this phone number?' } %>
         </p>
       </div>

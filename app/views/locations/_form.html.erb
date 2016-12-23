@@ -1,4 +1,4 @@
-<%= content_tag :div, class: "js-form" do %>
+<div class="js-form">
   <%= form_for [locatable, location] do |f| %>
     <div class="form-group">
       <%= f.label :address %>
@@ -6,4 +6,4 @@
     </div>
     <%= f.submit "Submit Address", class: "btn btn-default pull-right" %>
   <% end %>
-<% end %>
+</div>
