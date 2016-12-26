@@ -65,13 +65,3 @@
     </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-md-8">
-    <h2 class="media-heading">Jobs</h2>
-    <h4 class="media-heading">Create Job <%= link_to "New Job", new_user_job_path(@user), class: 'btn btn-success' %></h4>
-    <div class="js-jobs">
-      <%= render partial: 'jobs/job', locals: {user: @user, job: @user.jobs} %>
-    </div>
-  </div>
-</div>

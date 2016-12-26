@@ -1,0 +1,2 @@
+class PiecemealJob < Job
+end

@@ -5,5 +5,6 @@ class Jobs::LocationsController < LocationsController
 
   def set_locatable
     @locatable = Job.find(params[:job_id])
+    @view = @locatable
   end
 end

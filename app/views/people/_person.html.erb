@@ -6,6 +6,25 @@
         <p><%= link_to "Edit signer's name", edit_job_person_path(person.personable, person) %> |
            <%= link_to "Delete signer", [person.personable, person], method: :delete, remote: true, data: { confirm: 'Are you sure you want to delete this signer?' } %>
         </p>
+        <div>
+          <button type="button", class="btn btn-default js-btn">Add phone number</button>
+          <br>
+          <br>
+          <%= render partial: 'phones/form', locals: { phoneable: person, phone: Phone.new } %>
+        </div>
+        <div class="js-phones">
+          <%= render partial: 'phones/phone', locals: {phoneable: person, phone: person.phones} %>
+        </div>
+
+        <div>
+          <button type="button", class="btn btn-default js-btn">Add emails</button>
+          <br>
+          <br>
+          <%= render partial: 'emails/form', locals: { emailable: person, email: Email.new } %>
+        </div>
+        <div class="js-emails">
+          <%= render partial: 'emails/email', locals: {emailable: person, email: person.emails} %>
+        </div>
       </div>
     </div>
   <% end %>

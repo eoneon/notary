@@ -5,5 +5,6 @@ class Jobs::PeopleController < PeopleController
 
   def set_personable
     @personable = Job.find(params[:job_id])
+    @view = @personable
   end
 end
