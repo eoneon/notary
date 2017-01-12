@@ -8,6 +8,7 @@
             <p>Date: <%= @job.job_date %></p>
             <p>Status <%= @job.job_status %></p>
             <p><%= link_to "Edit job", edit_job_path(@job) %> |
+               <%#= link_to "Invoice job", invoice_path(@job) %> |
                <%= link_to "Delete job", @job, method: :delete, remote: true, data: { confirm: 'Are you sure you want to delete this job?' } %>
             </p>
           </div>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :jobs do
     resources :locations, module: :jobs
     resources :people, module: :jobs
+    get 'invoice' => 'jobs#invoice'
   end
 
   resources :people, only: [] do

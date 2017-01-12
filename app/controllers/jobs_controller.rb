@@ -18,7 +18,7 @@ class JobsController < ApplicationController
 
     if @job.save
       flash[:notice] = "Job was successfully saved."
-      redirect_to [@user, @job]
+      redirect_to @job
     else
       flash[:alert] = "There was an error saving the job. Please try again."
       render :new
@@ -36,7 +36,7 @@ class JobsController < ApplicationController
 
     if @job.save
       flash[:notice] = "Job was successfully updated."
-      redirect_to [@job.user, @job]
+      redirect_to job_path
     else
       flash[:alert] = "There was an error updating the job. Please try again."
       render :edit
@@ -56,6 +56,6 @@ class JobsController < ApplicationController
 
   private
   def job_params
-    params.require(:job).permit(:job_date, :job_status)
+    params.require(:job).permit(:job_date, :job_status, :type)
   end
 end
