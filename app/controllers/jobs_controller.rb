@@ -7,6 +7,10 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
   end
 
+  def invoice
+    @job = Job.find(params[:job_id])
+  end
+
   def new
     @user = current_user
     @job = Job.new
