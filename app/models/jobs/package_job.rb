@@ -1,2 +1,0 @@
-class PackageJob < Job
-end

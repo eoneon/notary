@@ -1,2 +1,0 @@
-class PiecemealJob < Job
-end
