@@ -1,7 +1,24 @@
 <h2>Invoice</h2>
-<h1>Edit Job for: <%= current_user.full_name %></h1>
+
+<h4>Edit Job for: <%= current_user.full_name %></h4>
 <div class="row">
-  <div class="col-lg-8">
+  <div class="col-md-8">
     <%= render partial: 'form', locals: { job: @job } %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <h4 class="media-heading">Add line items</h4>
+    <div>
+      <button type="button", class="btn btn-default js-btn">Add line item</button>
+      <div>
+        <%= render partial: 'line_items/form', locals: { job: @job, line_item: LineItem.new } %>
+      </div>
+
+      <div class="js-line_items">
+        <%= render partial: 'line_items/line_item', locals: {job: @job, line_items: @job.line_items} %>
+      </div>
+    </div>
   </div>
 </div>

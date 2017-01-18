@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116030120) do
+ActiveRecord::Schema.define(version: 20170118031632) do
 
   create_table "emails", force: :cascade do |t|
     t.string   "email"
@@ -42,9 +42,11 @@ ActiveRecord::Schema.define(version: 20170116030120) do
     t.integer  "quantity"
     t.integer  "itemizable_id"
     t.string   "itemizable_type"
+    t.integer  "job_id"
   end
 
   add_index "line_items", ["itemizable_type", "itemizable_id"], name: "index_line_items_on_itemizable_type_and_itemizable_id"
+  add_index "line_items", ["job_id"], name: "index_line_items_on_job_id"
 
   create_table "locations", force: :cascade do |t|
     t.text     "address"

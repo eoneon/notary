@@ -1,0 +1,12 @@
+<% job.line_items.each do |line_item| %>
+  <%= content_tag :div, class: "media js-line_items", id: "line_item-#{line_item.id}" do %>
+    <div class="media">
+      <div class="well">
+        <p><%= line_item.type %></p>
+        <p><%#= link_to "Edit line item", edit_job_line_item_path(line_item.job, line_item) %> |
+           <%#= link_to "Delete job", [line_item.job, line_item], method: :delete, remote: true, data: { confirm: 'Are you sure you want to delete this line item?' } %>
+        </p>
+      </div>
+    </div>
+  <% end %>
+<% end %>

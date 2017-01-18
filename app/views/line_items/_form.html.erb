@@ -1,0 +1,9 @@
+<div class="js-form">
+  <%= form_for [job, line_item] do |f| %>
+    <div class="form-group">
+      <%= f.label(:type, "Loan Package") %>
+      <%= f.radio_button(:type, "PackageLineItem") %>
+    </div>
+    <%= f.submit "Select line item type", class: "btn btn-default pull-right" %>
+  <% end %>
+</div>
