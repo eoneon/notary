@@ -13,8 +13,8 @@ class LineItemsController < ApplicationController
   end
 
   def update
-    @job = Job.find(params[:job_id])
-    @line_item = @job.assign_attributes(line_item_params)
+    @line_item = LineItem.find(params[:id])
+    @line_item.assign_attributes(line_item_params)
 
     if @line_item.save
       flash[:notice] = "Line item was successfully."
