@@ -9,7 +9,7 @@
             <p>Status <%= @job.job_status %></p>
             <p><%= link_to "Edit job", edit_job_path(@job) %> |
                <%= link_to "Invoice job", job_invoice_path(@job) %> |
-               <%= link_to "Delete job", @job, method: :delete, remote: true, data: { confirm: 'Are you sure you want to delete this job?' } %>
+               <%= link_to "Delete job", @job, method: :delete, data: { confirm: 'Are you sure you want to delete this job?' } %>
             </p>
           </div>
           <h4 class="media-heading">Job Location</h4>

@@ -48,13 +48,14 @@ class JobsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @job = @user.jobs.find(params[:id])
+    @job = Job.find(params[:id])
 
     if @job.destroy
       flash[:notice] = "Job was deleted successfully."
+      redirect_to action: :index
     else
       flash[:alert] = "Job couldn't be deleted. Try again."
+      render :show
     end
   end
 

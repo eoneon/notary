@@ -3,6 +3,8 @@
     <div class="form-group">
       <%= f.label(:type, "Loan Package") %>
       <%= f.radio_button(:type, "PackageLineItem") %>
+      <%= f.label(:type, "Service") %>
+      <%= f.radio_button(:type, "ServiceLineItem") %>
     </div>
     <%= f.submit "Select line item type", class: "btn btn-default pull-right" %>
   <% end %>
