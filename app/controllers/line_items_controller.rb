@@ -25,9 +25,19 @@ class LineItemsController < ApplicationController
     end
   end
 
-  private
+  def destroy
+    @job = Job.find(params[:job_id])
+    @line_item = @job.line_items.find(params[:id])
 
+    if @line_item.destroy
+      flash[:notice] = "This line item was deleted successfully."
+    else
+      flash[:alert] = "Line item couldn't be deleted. Try again."
+    end
+  end
+
+  private
   def line_item_params
-    params.require(:line_item).permit(:type)
+    params.require(:line_item).permit(:type, :quantity, :fee)
   end
 end

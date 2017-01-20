@@ -1,5 +1,4 @@
 class EmailsController < ApplicationController
-
   def create
     @email = @emailable.emails.build(email_params)
 
