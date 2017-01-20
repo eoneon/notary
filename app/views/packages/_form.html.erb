@@ -1,0 +1,9 @@
+<div class="js-form">
+  <%= form_for [job, package] do |f| %>
+    <div class="form-group">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+    <%= f.submit "Create package", class: "btn btn-default pull-right" %>
+  <% end %>
+</div>

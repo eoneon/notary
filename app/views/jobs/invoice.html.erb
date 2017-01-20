@@ -10,6 +10,12 @@
 <% if @job.type != PackageJob %>
   <div class="row">
     <div class="col-md-8">
+
+      <button type="button", class="btn btn-default js-btn">Add package</button>
+      <div>
+        <%= render partial: 'packages/form', locals: { job: @job, package: Package.new } %>
+      </div>
+
       <h4 class="media-heading">Add line items</h4>
       <div>
         <button type="button", class="btn btn-default js-btn">Add line item</button>
