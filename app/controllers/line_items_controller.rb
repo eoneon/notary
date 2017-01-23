@@ -21,7 +21,7 @@ class LineItemsController < ApplicationController
       redirect_to :back
     else
       flash[:notice] = "There was an error saving the line item."
-      render :new
+      render :back
     end
   end
 

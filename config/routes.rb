@@ -20,4 +20,6 @@ Rails.application.routes.draw do
     resources :phones, module: :people
     resources :emails, module: :people
   end
+
+  resources :packages
 end

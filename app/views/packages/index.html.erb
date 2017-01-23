@@ -1,0 +1,9 @@
+<h2>List of Package Names</h2>
+
+<% @packages.each do |package| %>
+  <%= content_tag :div, class: "media", id: "package-#{package.id}" do %>
+    <div class="media">
+      <p class="media-heading">Package Name: <%= link_to package.name, package %></p>
+    </div>
+  <% end %>
+<% end %>

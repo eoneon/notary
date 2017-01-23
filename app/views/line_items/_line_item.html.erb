@@ -2,9 +2,9 @@
   <%= content_tag :div, class: "media", id: "line_item-#{line_item.id}" do %>
     <div class="media">
       <div class="well">
-        <p> Name: <%= line_item.name %> Quantity: <%= line_item.quantity %> | Fee: $<%= line_item.fee %></p>
+        <p> Name: <%= link_to line_item.name, line_item.itemizable %> Quantity: <%= line_item.quantity %> | Fee: $<%= line_item.fee %></p>
         <%= render partial: 'line_items/form', locals: { job: job, line_item: line_item } %>
-        <p class="js-btn"><%= link_to "Edit line item!" %> |
+        <p class="js-btn"><%= link_to "Edit line item" %> |
            <%= link_to "Delete job", [line_item.job, line_item], method: :delete, remote: true, data: { confirm: 'Are you sure you want to delete this line item?' } %>
         </p>
       </div>

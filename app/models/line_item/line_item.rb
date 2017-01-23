@@ -2,6 +2,7 @@ class LineItem < ActiveRecord::Base
   belongs_to :job
   belongs_to :itemizable, polymorphic: true
   validates :itemizable, presence: true
+
   def name
     itemizable.name
   end
