@@ -7,8 +7,4 @@ class Job < ActiveRecord::Base
   def self.model_name
     ActiveModel::Name.new(self, nil, "Job")
   end
-
-  # def self.select_options
-  #   descendants.map{ |c| c.to_s }.sort
-  # end
 end

@@ -8,7 +8,7 @@ class LineItemsController < ApplicationController
       redirect_to :back
     else
       flash[:notice] = "There was an error saving the line item."
-      render :new
+      redirect_to :back
     end
   end
 
@@ -38,6 +38,6 @@ class LineItemsController < ApplicationController
 
   private
   def line_item_params
-    params.require(:line_item).permit(:type, :quantity, :fee, :name)
+    params.require(:line_item).permit(:type, :quantity, :fee, :itemizable_id)
   end
 end
