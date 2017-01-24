@@ -10,7 +10,7 @@ class PeopleController < ApplicationController
       flash[:notice] = "Signer was successfully."
       redirect_to @personable
     else
-      flash[:notice] = "There was an error saving the signer."
+      flash[:alert] = "There was an error saving the signer."
       render :new
     end
   end
@@ -27,7 +27,7 @@ class PeopleController < ApplicationController
       flash[:notice] = "Signer's name was successfully saved."
       redirect_to @personable
     else
-      flash[:notice] = "There was an error saving the signer's name"
+      flash[:alert] = "There was an error saving the signer's name"
       render :edit
     end
   end

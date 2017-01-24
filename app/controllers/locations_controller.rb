@@ -7,7 +7,7 @@ class LocationsController < ApplicationController
       flash[:notice] = "Address was successfully saved."
       redirect_to @locatable
     else
-      flash[:notice] = "There was an error saving address."
+      flash[:alert] = "There was an error saving address."
       render :new
     end
   end
@@ -20,7 +20,7 @@ class LocationsController < ApplicationController
       flash[:notice] = "Address was successfully saved."
       redirect_to @locatable
     else
-      flash[:notice] = "There was an error saving address."
+      flash[:alert] = "There was an error saving address."
       render :edit
     end
   end

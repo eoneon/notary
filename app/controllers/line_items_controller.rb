@@ -7,7 +7,7 @@ class LineItemsController < ApplicationController
       flash[:notice] = "Line item was successfully."
       redirect_to :back
     else
-      flash[:notice] = "There was an error saving the line item."
+      flash[:alert] = "There was an error saving the line item."
       redirect_to :back
     end
   end
@@ -20,7 +20,7 @@ class LineItemsController < ApplicationController
       flash[:notice] = "Line item was successfully."
       redirect_to :back
     else
-      flash[:notice] = "There was an error saving the line item."
+      flash[:alert] = "There was an error saving the line item."
       render :back
     end
   end

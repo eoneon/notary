@@ -20,7 +20,7 @@ class PhonesController < ApplicationController
       flash[:notice] = "Phone number was successfully saved."
       redirect_to @view
     else
-      flash[:notice] = "There was an error saving phone number."
+      flash[:alert] = "There was an error saving phone number."
       render :edit
     end
   end

@@ -14,8 +14,8 @@ class PackagesController < ApplicationController
       flash[:notice] = "Package was successfully."
       redirect_to :back
     else
-      flash[:notice] = "There was an error saving the package."
-      render :new
+      flash[:alert] = "There was an error saving the package."
+      redirect_to :back
     end
   end
 
@@ -27,8 +27,8 @@ class PackagesController < ApplicationController
       flash[:notice] = "Package was successfully."
       redirect_to :back
     else
-      flash[:notice] = "There was an error saving the package"
-      render :back
+      flash[:alert] = "There was an error saving the package"
+      redirect_to :back
     end
   end
 
@@ -40,7 +40,7 @@ class PackagesController < ApplicationController
       render :index
     else
       flash[:alert] = "Package couldn't be deleted. Try again."
-      render :back
+      redirect_to :back
     end
   end
 

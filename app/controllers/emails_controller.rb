@@ -6,7 +6,7 @@ class EmailsController < ApplicationController
       flash[:notice] = "Email was successfully saved."
       redirect_to @view
     else
-      flash[:notice] = "There was an error saving email."
+      flash[:alert] = "There was an error saving email."
       render :new
     end
   end
@@ -19,7 +19,7 @@ class EmailsController < ApplicationController
       flash[:notice] = "Email was successfully saved."
       redirect_to @view
     else
-      flash[:notice] = "There was an error saving email."
+      flash[:alert] = "There was an error saving email."
       render :edit
     end
   end

@@ -3,7 +3,8 @@
 <% @packages.each do |package| %>
   <%= content_tag :div, class: "media", id: "package-#{package.id}" do %>
     <div class="media">
-      <p class="media-heading">Package Name: <%= link_to package.name, package %></p>
+      <p class="media-heading">Package Name: <%= link_to package.name, package %></p> |
+      <%= link_to "Edit package name", edit_package(package) %>
     </div>
   <% end %>
 <% end %>
