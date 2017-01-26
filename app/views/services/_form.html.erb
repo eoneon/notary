@@ -1,0 +1,9 @@
+<div class="js-form">
+  <%= form_for [service] do |f| %>
+    <div class="form-group">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+    <%= f.submit "Create service", class: "btn btn-default pull-right" %>
+  <% end %>
+</div>

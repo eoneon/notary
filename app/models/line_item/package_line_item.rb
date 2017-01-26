@@ -1,4 +1,4 @@
-class PackageLineItem < LineItem  
+class PackageLineItem < LineItem
   after_initialize do
     self.itemizable_type = 'Package'
   end

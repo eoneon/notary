@@ -1,16 +1,16 @@
 <div class="js-form">
   <%= form_for [job, line_item] do |f| %>
-    <%= f.hidden_field :type, value: "PackageLineItem" %>
-    <div class="form-group">
-      <%#= f.label(:type, "Loan Package") %>
-      <%#= f.radio_button(:type, "PackageLineItem") %>
-      <%#= f.label(:type, "Service") %>
-      <%#= f.radio_button(:type, "ServiceLineItem") %>
-    </div>
+    <%= f.hidden_field :type, value: line_item.class.to_s %>
+    <!-- <div class="form-group">
+      <%= f.label(:type, "Loan Package") %>
+      <%= f.radio_button(:type, "PackageLineItem") %>
+      <%= f.label(:type, "Service") %>
+      <%= f.radio_button(:type, "ServiceLineItem") %>
+    </div> -->
 
     <div class="form-group">
       <%= f.label :name %><br />
-      <%= f.collection_select :itemizable_id, package_list, :id, :name, class: 'form-control' %>
+      <%= f.collection_select :itemizable_id, itemizable_list, :id, :name, class: 'form-control' %>
     </div>
 
     <div class="form-group">
@@ -22,6 +22,6 @@
       <%= f.label :fee %><br />
       <%= f.number_field :fee, autofocus: true %>
     </div>
-    <%= f.submit "Create line item", class: "btn btn-default pull-right" %>
+    <%= f.submit "Submit line item", class: "btn btn-default pull-right" %>
   <% end %>
 </div>

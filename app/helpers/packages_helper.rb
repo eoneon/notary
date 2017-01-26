@@ -1,5 +1,5 @@
 module PackagesHelper
-  def package_list
+  def itemizable_list
     Package.all
   end
 end

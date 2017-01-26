@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-md-8">
+    <div class="media">
+      <br>
+      <div class="media-body">
+        <h2 class="media-heading">Service Name: <%= @service.name %></h2>
+          <div class="well">
+            <%= render partial: 'services/form', locals: { service: @service } %>
+            <p class="js-btn"><%= link_to "Edit service" %> |
+             <%= link_to "Delete service", @service, method: :delete, data: { confirm: 'Are you sure you want to delete this service?' } %>
+            </p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

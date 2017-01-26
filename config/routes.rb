@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :people, module: :jobs
     resources :line_items, only: [:create, :update, :destroy]
     resources :packages, only: [:create]
+    resources :services, only: [:create]
     get 'invoice' => 'jobs#invoice'
   end
 
@@ -22,4 +23,5 @@ Rails.application.routes.draw do
   end
 
   resources :packages
+  resources :services
 end

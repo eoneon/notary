@@ -7,25 +7,53 @@
   </div>
 </div>
 
-<% if @job.type != PackageJob %>
+<% if @job.type == "PackageJob" %>
   <div class="row">
     <div class="col-md-8">
+      <button type="button", class="btn btn-default js-btn">Create new service</button>
+      <div>
+        <%= render partial: 'services/form', locals: { service: Service.new } %>
+      </div>
+    </div>
 
-      <button type="button", class="btn btn-default js-btn">Add package</button>
+    <br>
+    <br>
+
+    <div class="col-md-8">
+      <button type="button", class="btn btn-default js-btn">Create new package</button>
       <div>
         <%= render partial: 'packages/form', locals: { package: Package.new } %>
       </div>
+    </div>
 
-      <h4 class="media-heading">Add line items</h4>
+    <br>
+    <br>
+
+    <div class="col-md-8">
+      <h4 class="media-heading">Add Package</h4>
       <div>
-        <button type="button", class="btn btn-default js-btn">Add line item</button>
+        <button type="button", class="btn btn-default js-btn">Add package to invoice</button>
         <div>
-          <%= render partial: 'line_items/form', locals: { job: @job, line_item: LineItem.new } %>
+          <%= render partial: 'line_items/form', locals: { job: @job, line_item: PackageLineItem.new } %>
         </div>
+      </div>
 
-        <div class="js-line_items">
-          <%= render partial: 'line_items/line_item', locals: {job: @job, line_items: @job.line_items} %>
+      <div class="js-line_items">
+        <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.package_list} %>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <h4 class="media-heading">Add Services</h4>
+      <div>
+        <button type="button", class="btn btn-default js-btn">Add service to invoice</button>
+        <div>
+          <%= render partial: 'line_items/form', locals: { job: @job, line_item: ServiceLineItem.new } %>
         </div>
+      </div>
+
+      <div class="js-line_items">
+        <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.service_list} %>
       </div>
     </div>
   </div>
