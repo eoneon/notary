@@ -1,0 +1,9 @@
+<div class="js-form">
+  <%= form_for [document] do |f| %>
+    <div class="form-group">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+    <%= f.submit "Create document", class: "btn btn-default pull-right" %>
+  <% end %>
+</div>

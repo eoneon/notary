@@ -10,51 +10,89 @@
 <% if @job.type == "PackageJob" %>
   <div class="row">
     <div class="col-md-8">
-      <button type="button", class="btn btn-default js-btn">Create new service</button>
-      <div>
-        <%= render partial: 'services/form', locals: { service: Service.new } %>
-      </div>
-    </div>
-
-    <br>
-    <br>
-
-    <div class="col-md-8">
       <button type="button", class="btn btn-default js-btn">Create new package</button>
       <div>
         <%= render partial: 'packages/form', locals: { package: Package.new } %>
       </div>
     </div>
+  </div>
+<% end %>
 
-    <br>
-    <br>
+<% if @job.type == "PiecemealJob" %>
+  <div class="row">
+    <div class="col-md-8">
+      <button type="button", class="btn btn-default js-btn">Create new document</button>
+      <div>
+        <%= render partial: 'documents/form', locals: { document: Document.new } %>
+      </div>
+    </div>
+  </div>
+<% end %>
 
+<br>
+
+<div class="row">
+  <div class="col-md-8">
+    <button type="button", class="btn btn-default js-btn">Create new service</button>
+    <div>
+      <%= render partial: 'services/form', locals: { service: Service.new } %>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+<% if @job.type == "PackageJob" %>
+  <div class="row">
     <div class="col-md-8">
       <h4 class="media-heading">Add Package</h4>
       <div>
-        <button type="button", class="btn btn-default js-btn">Add package to invoice</button>
-        <div>
-          <%= render partial: 'line_items/form', locals: { job: @job, line_item: PackageLineItem.new} %>
-        </div>
+        <%= render partial: 'line_items/form', locals: { job: @job, line_item: PackageLineItem.new} %>
       </div>
+
+      <br>
+      <br>
 
       <div class="js-line_items">
         <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.job_packages} %>
       </div>
     </div>
+  </div>
+<% end %>
 
+<% if @job.type == "PiecemealJob" %>
+  <div class="row">
     <div class="col-md-8">
-      <h4 class="media-heading">Add Services</h4>
+      <h4 class="media-heading">Add Document</h4>
       <div>
-        <button type="button", class="btn btn-default js-btn">Add service to invoice</button>
-        <div>
-          <%= render partial: 'line_items/form', locals: { job: @job, line_item: ServiceLineItem.new } %>
-        </div>
+        <%= render partial: 'line_items/form', locals: { job: @job, line_item: DocumentLineItem.new} %>
       </div>
 
+      <br>
+      <br>
+
       <div class="js-line_items">
-        <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.job_services} %>
+        <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.job_documents} %>
       </div>
     </div>
   </div>
 <% end %>
+
+<br>
+
+<div class="row">
+  <div class="col-md-8">
+    <h4 class="media-heading">Add Services</h4>
+    <div>
+      <%= render partial: 'line_items/form', locals: { job: @job, line_item: ServiceLineItem.new } %>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="js-line_items">
+      <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.job_services} %>
+    </div>
+  </div>
+</div>

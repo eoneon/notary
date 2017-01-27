@@ -37,7 +37,8 @@ class ServicesController < ApplicationController
 
     if @service.destroy
       flash[:notice] = "This service was deleted successfully."
-      render :back
+      render :index
+
     else
       flash[:alert] = "service couldn't be deleted. Try again."
       redirect_to :back

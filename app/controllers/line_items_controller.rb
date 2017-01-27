@@ -31,8 +31,10 @@ class LineItemsController < ApplicationController
 
     if @line_item.destroy
       flash[:notice] = "This line item was deleted successfully."
+      redirect_to :back
     else
       flash[:alert] = "Line item couldn't be deleted. Try again."
+      redirect_to :back
     end
   end
 

@@ -4,7 +4,7 @@ class PiecemealJob < Job
   end
 
   def job_documents
-    self.line_items.where(itemizable_type: "Package")
+    self.line_items.where(itemizable_type: "Document")
   end
 
   def job_services

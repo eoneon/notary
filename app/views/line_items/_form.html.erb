@@ -1,20 +1,25 @@
-<div class="js-form">
+<div class="row">
   <%= form_for [job, line_item] do |f| %>
-    <%= f.hidden_field :type, value: line_item.class.to_s %>
-    <div class="form-group">
-      <%= f.label :name %><br />
-      <%= f.collection_select :itemizable_id, line_item.item_names, :id, :name, class: 'form-control' %>
-    </div>
+    <div class="col-lg-8 form-inline">
+      <%= f.hidden_field :type, value: line_item.class.to_s %>
+      <div class="form-group">
+        <%= f.label :name %><br />
+        <%= f.collection_select :itemizable_id, line_item.item_names, :id, :name, class: 'form-control' %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :quantity %><br />
-      <%= f.number_field :quantity, autofocus: true %>
-    </div>
+      <div class="form-group">
+        <%= f.label :quantity %><br />
+        <%= f.number_field :quantity, autofocus: true %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :fee %><br />
-      <%= f.number_field :fee, autofocus: true %>
+      <div class="form-group">
+        <%= f.label :fee %><br />
+        <%= f.number_field :fee, autofocus: true %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit "Submit line item", class: "btn btn-primary" %>
+      </div>
     </div>
-    <%= f.submit "Submit line item", class: "btn btn-default pull-right" %>
   <% end %>
 </div>
