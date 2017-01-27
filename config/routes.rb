@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :packages, only: [:create]
     resources :services, only: [:create]
     resources :documents, only: [:create]
+    resources :companies, only: [:create]
     get 'invoice' => 'jobs#invoice'
   end
 
@@ -26,4 +27,5 @@ Rails.application.routes.draw do
   resources :packages
   resources :services
   resources :documents
+  resources :companies
 end
