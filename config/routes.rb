@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :line_items, only: [:create, :update, :destroy]
     resources :packages, only: [:create]
     resources :services, only: [:create]
+    resources :documents, only: [:create]
     get 'invoice' => 'jobs#invoice'
   end
 
@@ -24,4 +25,5 @@ Rails.application.routes.draw do
 
   resources :packages
   resources :services
+  resources :documents
 end
