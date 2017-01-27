@@ -34,12 +34,12 @@
       <div>
         <button type="button", class="btn btn-default js-btn">Add package to invoice</button>
         <div>
-          <%= render partial: 'line_items/form', locals: { job: @job, line_item: PackageLineItem.new } %>
+          <%= render partial: 'line_items/form', locals: { job: @job, line_item: PackageLineItem.new} %>
         </div>
       </div>
 
       <div class="js-line_items">
-        <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.package_list} %>
+        <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.job_packages} %>
       </div>
     </div>
 
@@ -53,7 +53,7 @@
       </div>
 
       <div class="js-line_items">
-        <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.service_list} %>
+        <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.job_services} %>
       </div>
     </div>
   </div>

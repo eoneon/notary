@@ -6,4 +6,8 @@ class ServiceLineItem < LineItem
   def quantity
     1
   end
+
+  def item_names
+    Service.all
+  end
 end

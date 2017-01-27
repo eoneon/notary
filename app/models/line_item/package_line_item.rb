@@ -6,4 +6,8 @@ class PackageLineItem < LineItem
   def quantity
     1
   end
+
+  def item_names
+    Package.all
+  end
 end

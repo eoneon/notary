@@ -3,11 +3,11 @@ class PackageJob < Job
     0
   end
 
-  def package_list
+  def job_packages
     self.line_items.where(itemizable_type: "Package")
   end
 
-  def service_list
+  def job_services
     self.line_items.where(itemizable_type: "Service")
   end
 end
