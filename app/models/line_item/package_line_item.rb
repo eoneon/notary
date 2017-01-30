@@ -3,11 +3,11 @@ class PackageLineItem < LineItem
     self.itemizable_type = 'Package'
   end
 
-  def quantity
-    1
-  end
-
   def item_names
     Package.all
+  end
+
+  def quantity
+    1
   end
 end

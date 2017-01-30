@@ -3,11 +3,11 @@ class ServiceLineItem < LineItem
     self.itemizable_type = 'Service'
   end
 
-  def quantity
-    1
-  end
-
   def item_names
     Service.all
+  end
+
+  def quantity
+    1
   end
 end

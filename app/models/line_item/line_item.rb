@@ -10,6 +10,10 @@ class LineItem < ActiveRecord::Base
   def self.model_name
     ActiveModel::Name.new(self, nil, "LineItem")
   end
+
+  def item_names
+    self.itemizable_type.constantize.all
+  end
 end
 
 
