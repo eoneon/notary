@@ -6,12 +6,25 @@
         <h2 class="media-heading">Jobs for: <%= current_user.full_name %></h2>
           <div class="well">
             <p>Date: <%= @job.job_date %></p>
-            <p>Status <%= @job.job_status %></p>
+            <p>Status: <%= @job.job_status %></p>
+              <% if @job.type == "PackageJob" && @job.company %>
+            <p>Company: <%= @job.company.name %></p>
+            <% end %>
             <p><%= link_to "Edit job", edit_job_path(@job) %> |
                <%= link_to "Invoice job", job_invoice_path(@job) %> |
                <%= link_to "Delete job", @job, method: :delete, data: { confirm: 'Are you sure you want to delete this job?' } %>
             </p>
           </div>
+
+          <% if @job.type == "PackageJob" %>
+            <div>
+              <button type="button", class="btn btn-default js-btn">Add company</button>
+              <div>
+                <%= render partial: 'companies/form', locals: { job: @job, company: Company.new } %>
+              </div>
+            </div>
+          <% end %>
+
           <h4 class="media-heading">Job Location</h4>
 
           <div>

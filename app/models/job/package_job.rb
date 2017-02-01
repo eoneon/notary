@@ -10,4 +10,8 @@ class PackageJob < Job
   def job_services
     self.line_items.where(itemizable_type: "Service")
   end
+
+  # def company
+  #   Company.where(id: self.company_id)
+  # end
 end
