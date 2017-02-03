@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170131024604) do
+ActiveRecord::Schema.define(version: 20170203024434) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -37,15 +37,16 @@ ActiveRecord::Schema.define(version: 20170131024604) do
 
   create_table "jobs", force: :cascade do |t|
     t.date     "job_date"
-    t.boolean  "job_status", default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "job_status",    default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "user_id"
     t.string   "type"
-    t.integer  "company_id"
+    t.integer  "billable_id"
+    t.string   "billable_type"
   end
 
-  add_index "jobs", ["company_id"], name: "index_jobs_on_company_id"
+  add_index "jobs", ["billable_type", "billable_id"], name: "index_jobs_on_billable_type_and_billable_id"
   add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
 
   create_table "line_items", force: :cascade do |t|

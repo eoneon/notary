@@ -4,6 +4,7 @@ class Job < ActiveRecord::Base
   has_many :people, as: :personable, dependent: :destroy
   has_many :line_items, dependent: :destroy
   belongs_to :company
+  belongs_to :billable, polymorphic: true
 
   def self.model_name
     ActiveModel::Name.new(self, nil, "Job")

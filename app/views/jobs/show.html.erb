@@ -7,8 +7,8 @@
           <div class="well">
             <p>Date: <%= @job.job_date %></p>
             <p>Status: <%= @job.job_status %></p>
-              <% if @job.type == "PackageJob" && @job.company %>
-            <p>Company: <%= @job.company.name %></p>
+              <% if @job.type == "PackageJob" && @job.billable %>
+            <p>Company: <%= @job.billable.name %></p>
             <% end %>
             <p><%= link_to "Edit job", edit_job_path(@job) %> |
                <%= link_to "Invoice job", job_invoice_path(@job) %> |

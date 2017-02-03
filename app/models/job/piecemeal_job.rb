@@ -1,4 +1,8 @@
 class PiecemealJob < Job
+  after_initialize do
+    self.billable_type = 'Person'
+  end
+
   def document_fee
     10
   end
