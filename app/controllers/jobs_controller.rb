@@ -40,7 +40,7 @@ class JobsController < ApplicationController
 
     if @job.save
       flash[:notice] = "Job was successfully updated."
-      redirect_to job_path
+      redirect_to @job
     else
       flash[:alert] = "There was an error updating the job. Please try again."
       render :edit

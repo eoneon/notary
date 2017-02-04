@@ -1,4 +1,4 @@
-<h1>Edit Job for: <%= current_user.full_name %></h1>
+<h1>Edit Job Details for: <%= @job.first_signer_last_name if @job.people.first %></h1>
 <div class="row">
   <div class="col-lg-8">
     <%= render partial: 'form', locals: { user: @user, job: @job } %>

@@ -13,4 +13,12 @@ class Job < ActiveRecord::Base
   def first_signer_last_name
     self.people.first.last_name
   end
+
+  def signers_last_name_first
+    signers = []
+    self.people.each do |p|
+      signers << p.last_name + ", " + p.first_name
+    end
+    return signers.join(" \& ")
+  end
 end

@@ -8,10 +8,12 @@
   </div>
 
   <div class="form-group">
-    <%= f.label(:type, "Loan Package") %>
+    <%= f.label(:type, "Invoice as Loan Package") %>
     <%= f.radio_button(:type, "PackageJob") %>
 
-    <%= f.label(:type, "Line Item Invoice") %>
+    <br>
+    
+    <%= f.label(:type, "Line as Line Item Invoice") %>
     <%= f.radio_button(:type, "PiecemealJob") %>
   </div>
 
