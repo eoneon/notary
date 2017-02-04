@@ -6,9 +6,10 @@
         <h2 class="media-heading">Jobs for: <%= current_user.full_name %></h2>
           <div class="well">
             <p>Date: <%= @job.job_date %></p>
-            <p>Status: <%= @job.job_status %></p>
+            <p>Signer's Name: <%= @job.first_signer_last_name if @job.people.first %></p>
+            <p>Status: <%= "Paid" ? @job.job_status : "Unpaid" %></p>
               <% if @job.type == "PackageJob" && @job.billable %>
-            <p>Company: <%= @job.billable.name %></p>
+            <p>Company: <%= @job.billable.full_name %></p>
             <% end %>
             <p><%= link_to "Edit job", edit_job_path(@job) %> |
                <%= link_to "Invoice job", job_invoice_path(@job) %> |
@@ -46,7 +47,7 @@
 
           <h4 class="media-heading">Signers  <%= link_to "Add Signer", new_job_person_path(@job), class: 'btn btn-success' %></h4>
           <div class="media-body">
-            <%= render partial: 'people/person', locals: {personable: @job, person: @job.locations} %>
+            <%= render partial: 'people/person', locals: {personable: @job, person: @job.people} %>
           </div>
       </div>
     </div>

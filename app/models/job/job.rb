@@ -9,4 +9,8 @@ class Job < ActiveRecord::Base
   def self.model_name
     ActiveModel::Name.new(self, nil, "Job")
   end
+
+  def first_signer_last_name
+    self.people.first.last_name
+  end
 end

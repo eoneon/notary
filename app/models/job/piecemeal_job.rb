@@ -7,6 +7,10 @@ class PiecemealJob < Job
     10
   end
 
+  def name
+    billable.name
+  end
+
   def job_documents
     self.line_items.where(itemizable_type: "Document")
   end
