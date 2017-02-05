@@ -3,11 +3,11 @@
     <div class="media">
       <br>
       <div class="media-body">
-        <h2 class="media-heading">Jobs Name: <%= @job.first_signer_last_name if @job.people.first %></h2>
+        <h2 class="media-heading">Job Name: <%= @job.first_signer_last_name if @job.people.first %></h2>
           <div class="well">
             <p>Date: <%= @job.job_date %></p>
             <p>Signer's: <%= @job.signers_last_name_first if @job.people.first %></p>
-            <p>Status: <%= "Paid" ? @job.job_status : "Unpaid" %></p>
+            <p>Status: <%= @job.job_status %></p>
               <% if @job.type == "PackageJob" && @job.billable %>
             <p>Company: <%= @job.billable.name %></p>
             <% end %>

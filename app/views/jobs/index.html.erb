@@ -6,7 +6,7 @@
      <div class="media">
        <div class="media-body">
          <h4 class="media-heading">
-           <%= link_to job.job_date, job %>
+           <%= link_to job.job_date, job %> | <%= job.signers_last_name_first if job.people.first %> | <%= job.billable.name if job.type == "PackageJob" && job.billable %>
          </h4>
        </div>
      </div>

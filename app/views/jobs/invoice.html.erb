@@ -1,6 +1,6 @@
 <h2>Invoice</h2>
 
-<h4>Edit Job for: <%= current_user.full_name %></h4>
+<h4>Edit Invoice for: <%= @job.signers_last_name_first if @job.people.first %></h4>
 <div class="row">
   <div class="col-md-8">
     <%= render partial: 'form', locals: { job: @job } %>

@@ -3,7 +3,7 @@ class Job < ActiveRecord::Base
   has_many :locations, as: :locatable, dependent: :destroy
   has_many :people, as: :personable, dependent: :destroy
   has_many :line_items, dependent: :destroy
-  belongs_to :company
+  # belongs_to :company
   belongs_to :billable, polymorphic: true
 
   def self.model_name
@@ -19,6 +19,6 @@ class Job < ActiveRecord::Base
     self.people.each do |p|
       signers << p.last_name + ", " + p.first_name
     end
-    return signers.join(" \& ")
+    signers.join(" & ")
   end
 end
