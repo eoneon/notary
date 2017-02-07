@@ -21,4 +21,8 @@ class Job < ActiveRecord::Base
     end
     signers.join(" & ")
   end
+
+  def all_companies
+    companies = Company.all
+  end
 end

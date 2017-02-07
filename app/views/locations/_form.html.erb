@@ -1,9 +1,7 @@
-<div class="js-form">
-  <%= form_for [locatable, location] do |f| %>
-    <div class="form-group">
-      <%= f.label :address %>
-      <%= f.text_field :address, class: 'form-control', placeholder: "Enter address" %>
-    </div>
-    <%= f.submit "Submit Address", class: "btn btn-default pull-right" %>
-  <% end %>
-</div>
+<%= form_for [@locatable, @location] do |f| %>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: 'form-control', placeholder: "Enter address" %>
+  </div>
+  <%= f.submit "Submit Address", class: "btn btn-default pull-right" %>
+<% end %>

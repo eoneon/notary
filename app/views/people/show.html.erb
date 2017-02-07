@@ -1,0 +1,23 @@
+<h1><%= @person.full_name %></h1>
+
+<div>
+  <button type="button", class="btn btn-default js-btn">Add phone number</button>
+  <br>
+  <br>
+  <%= render partial: 'phones/form', locals: { phoneable: @person, phone: Phone.new } %>
+</div>
+
+<div class="js-phones">
+  <%= render partial: 'phones/phone', locals: {phoneable: @person, phone: @person.phones} %>
+</div>
+
+<div>
+  <button type="button", class="btn btn-default js-btn">Add emails</button>
+  <br>
+  <br>
+  <%= render partial: 'emails/form', locals: { emailable: @person, email: Email.new } %>
+</div>
+
+<div class="js-emails">
+  <%= render partial: 'emails/email', locals: {emailable: @person, email: @person.emails} %>
+</div>

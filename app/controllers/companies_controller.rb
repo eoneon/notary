@@ -37,7 +37,7 @@ class CompaniesController < ApplicationController
 
     if @company.destroy
       flash[:notice] = "This company was deleted successfully."
-      render :index
+      render :back
     else
       flash[:alert] = "Company couldn't be deleted. Try again."
       redirect_to :back
