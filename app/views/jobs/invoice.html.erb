@@ -1,6 +1,6 @@
 <h2>Invoice</h2>
 
-<h4>Edit Invoice for: <%= @job.signers_last_name_first if @job.people.first %></h4>
+<h4>Invoice for: <%= @job.signers_last_name_first if @job.people.first %></h4>
 <div class="row">
   <div class="col-md-8">
     <%= render partial: 'form', locals: { job: @job } %>
@@ -94,5 +94,11 @@
     <div class="js-line_items">
       <%= render partial: 'line_items/line_item', locals: {job: @job, line_item: @job.job_services} %>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <h4 class="media-heading">Total: <%= @job.total %></h4>
   </div>
 </div>

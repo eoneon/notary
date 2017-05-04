@@ -16,10 +16,15 @@
               <%= @job.locations.first.address %>
               <% end %>
             </p>
-            <p>Company:
-            <% if @job.type == "PackageJob" && @job.billable %>
-               <%= link_to @job.billable.name, company_path(@job.billable) %></p>
+
+            <% if @job.type == "PackageJob" %>
+               <p>Company:
+                 <% if @job.billable %>
+                  <%= link_to @job.billable.name, company_path(@job.billable) %>
+                <% end %>
+              </p>
             <% end %>
+            <p>Fee: <%= @job.total %> </p>
             <p>Status: <%= @job.job_status %></p>
             <p><%= link_to "Edit job", edit_job_path(@job) %> |
                <%= link_to "Invoice job", job_invoice_path(@job) %> |
@@ -38,7 +43,6 @@
 
           <h4 class="media-heading">Address  <%= link_to "Add Address", new_job_location_path(@job), class: 'btn btn-success' %></h4>
           <h4 class="media-heading">Signers  <%= link_to "Add Signer", new_job_person_path(@job), class: 'btn btn-success' %></h4>
-
       </div>
     </div>
   </div>

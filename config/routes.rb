@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :jobs do
+    resources :package_jobs, module: :jobs
     resources :locations, module: :jobs
     resources :people, module: :jobs
     resources :line_items, only: [:create, :update, :destroy]
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
     resources :emails, module: :people
   end
 
+  resources :locations
   resources :packages
   resources :services
   resources :documents

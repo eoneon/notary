@@ -6,11 +6,16 @@ class DocumentLineItem < LineItem
   def item_names
     Document.all
   end
-  # def fee
-  #   self.job.document_fee
-  # end
 
-  def total
-    self.line_items.sum(:fee)
+  def document_fee
+    10
   end
+
+  def fee
+    document_fee * self.quantity.to_i
+  end
+
+  # def total
+  #   self.line_items.sum(:fee)
+  # end
 end

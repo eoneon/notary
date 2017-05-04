@@ -3,12 +3,20 @@ class LocationsController < ApplicationController
     @location = Location.new
   end
 
+  def show
+    @location = Location.find(params[:id])
+  end
+  
+  def edit
+    @location = Location.find(params[:id])
+  end
+
   def create
     @location = @locatable.locations.build(location_params)
 
     if @location.save
       flash[:notice] = "Address was successfully saved."
-      redirect_to @locatable
+      redirect_to @view
     else
       flash[:alert] = "There was an error saving address."
       render :new

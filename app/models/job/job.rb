@@ -25,4 +25,8 @@ class Job < ActiveRecord::Base
   def all_companies
     companies = Company.all
   end
+
+  def total
+    self.line_items.sum(:fee)
+  end
 end

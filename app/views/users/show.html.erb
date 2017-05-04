@@ -12,18 +12,12 @@
       </div>
     </div>
 
-
-    <h4 class="media-heading">My Address</h4>
-
     <div>
-      <button type="button", class="btn btn-default js-btn">Add address</button>
-      <div>
-        <%= render partial: 'locations/form', locals: { locatable: @user, location: Location.new } %>
-      </div>
+      <h4 class="media-heading">Add user's address  <%= link_to "Add Address", new_user_location_path(@user), class: 'btn btn-success' %></h4>
 
       <br>
       <br>
-
+      <h4 class="media-heading">My Address</h4>
       <div class="js-locations">
         <%= render partial: 'locations/location', locals: {locatable: @user, location: @user.locations} %>
       </div>

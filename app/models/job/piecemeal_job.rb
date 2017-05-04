@@ -3,8 +3,10 @@ class PiecemealJob < Job
     self.billable_type = 'Person'
   end
 
-  def document_fee
-    10
+  before_save do
+    if self.persisted? && self.changed_attributes.include?(:type)
+      PackageLineItem.where(job: self).destroy_all
+    end
   end
 
   def name

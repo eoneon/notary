@@ -27,7 +27,7 @@
   <% if @job.type == "PiecemealJob" %>
     <div class="form-group">
       <%= f.label :name %><br />
-      <%= f.collection_select :billable_id, @job.people, :id, :last_name, class: 'form-control' %>
+      <%= f.collection_select :billable_id, @job.people, :id, :last_name, {include_blank: true}, class: 'form-control' %>
     </div>
   <% end %>
   <%= f.submit "Submit Job", class: "btn btn-default pull-right" %>

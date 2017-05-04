@@ -3,11 +3,11 @@ class PackageJob < Job
     self.billable_type = 'Company'
   end
 
-  # before_save do
-  #   if self.persisted? && self.changed_attributes.include?(:type)
-  #     DocumentLineItem.where(job: self).destroy_all
-  #   end
-  # end
+  before_save do
+    if self.persisted? && self.changed_attributes.include?(:type)
+      DocumentLineItem.where(job: self).destroy_all
+    end
+  end
 
   def document_fee
     0
